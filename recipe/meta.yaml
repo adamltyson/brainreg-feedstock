@@ -23,10 +23,10 @@ build:
 
 requirements:
   host:
-    - python {{ python_min }}
+    - python 3.11
     - pip
   run:
-    - python >={{ python_min }}
+    - python >=3.11
     - brainglobe-atlasapi
     - brainglobe-space
     - brainglobe-napari-io
@@ -54,7 +54,7 @@ test:
     - brainreg --help
   requires:
     - pip
-    - python {{ python_min }}
+    - python 3.11
 
 about:
   summary: Automated 3D brain registration
