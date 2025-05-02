@@ -1,5 +1,6 @@
 {% set name = "brainreg" %}
 {% set version = "1.0.12" %}
+{% set python_min = "3.11" %}
 
 package:
   name: {{ name|lower }}
@@ -23,10 +24,10 @@ build:
 
 requirements:
   host:
-    - python 3.11
+    - python {{ python_min }}
     - pip
   run:
-    - python >=3.11
+    - python >={{ python_min }}
     - brainglobe-atlasapi
     - brainglobe-space
     - brainglobe-napari-io
@@ -54,7 +55,7 @@ test:
     - brainreg --help
   requires:
     - pip
-    - python 3.11
+    - python {{ python_min }}
 
 about:
   summary: Automated 3D brain registration
